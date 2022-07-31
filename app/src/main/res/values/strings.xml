@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">palmapp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="masukkan_email">Masukkan Email</string>
+    <string name="masukkan_password">Masukkan Password</string>
+    <string name="dont_have_account">Dont have account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="search">Search</string>
+    <string name="perkebunan">Perkebunan</string>
+    <string name="jasa">Jasa</string>
+    <string name="company">Company</string>
+    <string name="register">Register</string>
+    <string name="masukkan_nama_lengkap">Masukkan Username</string>
+</resources>
