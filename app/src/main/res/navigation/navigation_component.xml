@@ -12,7 +12,14 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -22,42 +29,52 @@
 
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/register_enter_anim"
+            app:exitAnim="@anim/login_exit_anim"
+            app:popEnterAnim="@anim/register_exit_anim"
+            app:popExitAnim="@anim/login_enter_anim"/>
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="mumtaz.telsa.palmapp.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="mumtaz.telsa.palmapp.view.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
-        <action
-            android:id="@+id/action_searchFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_searchFragment_to_homeFragment"-->
+<!--            app:destination="@id/homeFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/addFragment"
         android:name="mumtaz.telsa.palmapp.view.AddFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" >
-        <action
-            android:id="@+id/action_addFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_addFragment_to_homeFragment"-->
+<!--            app:destination="@id/homeFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
         android:name="mumtaz.telsa.palmapp.view.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" >
-        <action
-            android:id="@+id/action_chatFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_chatFragment_to_homeFragment"-->
+<!--            app:destination="@id/homeFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -66,6 +83,24 @@
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="mumtaz.telsa.palmapp.view.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment

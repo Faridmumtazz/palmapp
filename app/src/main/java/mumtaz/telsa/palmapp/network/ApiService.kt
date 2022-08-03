@@ -3,17 +3,22 @@ package mumtaz.telsa.palmapp.network
 import mumtaz.telsa.palmapp.model.GetAllUserResponseItem
 import mumtaz.telsa.palmapp.model.PostUserResponse
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
 
     @GET("register")
-    fun getAllUsers() : Call<List<GetAllUserResponseItem>>
+    suspend fun getUser(
+        @Query("email") email : String
+    ): List<GetAllUserResponseItem>
 
     @POST("register")
-    fun addUsers(
+    suspend fun addUsers(
         @Body user : PostUserResponse
     ): Call<GetAllUserResponseItem>
+
+    @PUT ("register/{id}")
+    suspend fun updateUser(
+        @Body user : PostUserResponse, @Path("id") id:String
+    ) : GetAllUserResponseItem
 }

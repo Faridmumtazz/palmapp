@@ -12,6 +12,26 @@
     <string name="jasa">Jasa</string>
     <string name="company">Company</string>
     <string name="register">Register</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="profile">Profile</string>
+    <string name="the_palm_app_user">The Palm App User</string>
+    <string name="username">Username</string>
+    <string name="history">History</string>
+    <string name="klasifikasi_name">Nama</string>
+    <string name="lihat_detail">Lihat Detail</string>
+    <string name="email">Email</string>
+    <string name="masukkan_nama">Masukkan Nama</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="alamat">Alamat</string>
+    <string name="masukkan_alamat">Masukkan Alamat</string>
+    <string name="email_can_t_be_edited">Email cant be edited</string>
+    <string name="password">Password</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="update_user">Update User</string>
+    <string name="masukkan_tanggal_lahir">MasukkanTanggal Lahir</string>
+    <string name="you_don_t_have_favorite_movie">you dont have history</string>
+
     <string name="masukkan_nama_lengkap">Masukkan Username</string>
     <string name="registering_user_please_wait" tools:ignore="TypographyEllipsis">Registering user, Please Wait …</string>
+    <string name="logging_in_please_wait" tools:ignore="TypographyEllipsis">Logging in, Please Wait …</string>
 </resources>

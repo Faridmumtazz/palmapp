@@ -3,23 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/appdev/palmapp/app/src/main/res/drawable-v24/ic_baseline_heart_broken_24.xml" value="0.112" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/drawable-v24/ic_baseline_person_24.xml" value="0.112" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/drawable-v24/ic_blue_edit_24.xml" value="0.112" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/drawable-v24/ic_outline_remove_green_eye_24.xml" value="0.135" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/drawable-v24/style_button.xml" value="0.135" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/drawable-v24/style_et.xml" value="0.135" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.112" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.112" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.135" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/drawable/ic_green_eye_24.xml" value="0.1" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/drawable/ic_white_person_24.xml" value="0.1" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_add.xml" value="0.184375" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_chat.xml" value="0.184375" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_edit_profile.xml" value="0.184375" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_login_wait_dialog.xml" value="0.184375" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_profile.xml" value="0.184375" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_register.xml" value="0.184375" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_register_wait_dialog.xml" value="0.184375" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_search.xml" value="0.184375" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_show_image_user_dialog.xml" value="0.184375" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_splash.xml" value="0.22" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/fragment_webview.xml" value="0.184375" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/layout/item_history.xml" value="0.22" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/layout/item_perkebunan.xml" value="0.4466666666666667" />
         <entry key="..\:/appdev/palmapp/app/src/main/res/menu/nav_menu.xml" value="0.184375" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/menu/option_menu.xml" value="0.184375" />
+        <entry key="..\:/appdev/palmapp/app/src/main/res/menu/profile_menu.xml" value="0.18333333333333332" />
       </map>
     </option>
   </component>

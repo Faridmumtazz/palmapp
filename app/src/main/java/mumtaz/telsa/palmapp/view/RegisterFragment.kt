@@ -3,6 +3,7 @@ package mumtaz.telsa.palmapp.view
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_register.*
 import mumtaz.telsa.palmapp.R
+import mumtaz.telsa.palmapp.data.utils.Status
 import mumtaz.telsa.palmapp.databinding.FragmentRegisterBinding
 import mumtaz.telsa.palmapp.model.GetAllUserResponseItem
 import mumtaz.telsa.palmapp.model.PostUserResponse
@@ -26,22 +28,18 @@ class RegisterFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: UserApiViewModel by activityViewModels()
+    private val viewModel: UserApiViewModel by hiltNavGraphViewModels(R.id.navigation_component)
 
     private lateinit var name: String
     private lateinit var email: String
     private lateinit var password: String
     private var cek: Boolean = false
     private var viewPass: Boolean = false
-    private var viewKonfPass: Boolean = false
-
-    private lateinit var listUser: List<GetAllUserResponseItem>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
         (activity as AppCompatActivity?)!!.supportActionBar?.title = "Register"
@@ -52,18 +50,11 @@ class RegisterFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getAllUsers()
-        viewModel.listUsers.observe(viewLifecycleOwner) {
-            listUser = it
-        }
-
         binding.apply {
             btnRegister.setOnClickListener(this@RegisterFragment)
             btnViewPass.setOnClickListener(this@RegisterFragment)
         }
-//        btn_register.setOnClickListener {
-//            Navigation.findNavController(requireView()).navigate(R.id.action_registerFragment_to_loginFragment)
-//        }
+
     }
 
     override fun onClick(p0: View?) {
@@ -74,7 +65,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
             R.id.btn_view_pass -> {
                 if (!viewPass) {
                     binding.apply {
-                        btnViewPass.setImageResource(R.drawable.ic_outline_remove_green_eye_24)
+                        btnViewPass.setImageResource(R.drawable.ic_green_eye_24)
                         etPasswordRegis.transformationMethod =
                             HideReturnsTransformationMethod.getInstance()
                     }
@@ -105,34 +96,55 @@ class RegisterFragment : Fragment(), View.OnClickListener {
     }
 
     private fun registerUser(username : String, email : String, password: String){
-        val regUser = PostUserResponse(email, password, username)
-        RegisterWaitDialogFragment().show(requireActivity().supportFragmentManager,null)
+        val regUser = PostUserResponse(
+            "",
+            "",
+            email,
+            "",
+            password,
+            username
+        )
 
-        if (inputCheck(name, email, password, cek)) {
+        if (inputCheck(username, email, password, cek)) {
 
-            for (data in listUser) {
-                if (this.email == data.email) {
-                    Toast.makeText(
-                        requireContext(),
-                        "Email has already used by another user",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    return
+            viewModel.getUser(email).observe(viewLifecycleOwner) {
+                when (it.status) {
+                    Status.SUCCESS -> {
+                        val data = it.data!!
+                        if (data.isNotEmpty()) {
+                            viewModel.registerCheck.postValue(true)
+                            Toast.makeText(
+                                requireContext(),
+                                "Email has already used by another user",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            viewModel.registerUser(regUser).observe(viewLifecycleOwner) { reg ->
+                                when (reg.status) {
+                                    Status.SUCCESS -> {
+                                        viewModel.registerCheck.postValue(true)
+                                        Toast.makeText(
+                                            requireContext(),
+                                            "Register successful",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                        Navigation.findNavController(requireView())
+                                            .navigate(R.id.action_registerFragment_to_loginFragment)
+                                    }
+                                    Status.ERROR -> {
+                                        viewModel.registerCheck.postValue(true)
+                                        Log.d("errMsg", reg.message.toString())
+                                    }
+                                    Status.LOADING -> Log.d("loadingMsg", reg.message.toString())
+                                }
+                            }
+                        }
+                    }
+                    Status.ERROR -> Log.d("errMsg", it.message.toString())
+                    Status.LOADING -> RegisterWaitDialogFragment().show(requireActivity().supportFragmentManager, null)
                 }
-            }
 
-            viewModel.registerUser(regUser)
-            viewModel.toastRegisterMessage.observe(viewLifecycleOwner){
-                if (it != null){
-                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-                }
             }
-            Toast.makeText(
-                requireContext(),
-                "Register successful",
-                Toast.LENGTH_SHORT
-            ).show()
-            Navigation.findNavController(requireView()).navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
 

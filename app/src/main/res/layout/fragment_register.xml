@@ -24,7 +24,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="70dp"
         android:padding="15dp"
-        android:hint="@string/masukkan_nama_lengkap"
+        android:hint="@string/masukkan_email"
         style="@style/EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -34,7 +34,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
         android:padding="15dp"
-        android:hint="@string/masukkan_email"
+        android:hint="@string/masukkan_nama_lengkap"
         style="@style/EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

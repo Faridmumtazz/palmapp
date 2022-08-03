@@ -6,12 +6,13 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import dagger.hilt.android.AndroidEntryPoint
 import mumtaz.telsa.palmapp.databinding.ActivityMainBinding
 import mumtaz.telsa.palmapp.view.HomeFragment
 import mumtaz.telsa.palmapp.view.ProfileFragment
 import mumtaz.telsa.palmapp.view.WebviewFragment
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -35,6 +36,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 
 }
