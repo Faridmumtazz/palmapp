@@ -32,6 +32,12 @@
     <string name="you_don_t_have_favorite_movie">you dont have history</string>
 
     <string name="masukkan_nama_lengkap">Masukkan Username</string>
+    <string name="nama_kebun">Kebun Telti</string>
+    <string name="date_time_kebun">19-08-2022</string>
+    <string name="kuantitas_kebun">3380</string>
+    <string name="ton">Ton</string>
+    <string name="desc">Perspiciatis est soluta ipsa cumque eius. Fuga vel consequatur aspernatur ut autem ipsa alias est magni. Vitae dignissimos quidem quos rerum doloremque maxime et. Omnis dicta quia labore veritatis.\nSunt et sed ut aspernatur. Voluptas assumenda possimus ut aut et aperiam. Et veritatis quibusdam consequatur consequatur doloremque. Deserunt sint minima ut distinctio quas.\nUt consequatur qui ad dolorem dolor et. Eum accusamus quia. Et aliquid labore non quibusdam repellat. Molestiae repudiandae possimus dolorum praesentium dolorum atque molestiae. Soluta vel corporis porro asperiores. Ea id qui.</string>
+    <string name="alamat_kebun">Jl. Sumantri Brodjonegoro</string>
     <string name="registering_user_please_wait" tools:ignore="TypographyEllipsis">Registering user, Please Wait …</string>
     <string name="logging_in_please_wait" tools:ignore="TypographyEllipsis">Logging in, Please Wait …</string>
 </resources>

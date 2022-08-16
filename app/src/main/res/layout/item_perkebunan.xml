@@ -7,6 +7,7 @@
     android:layout_marginVertical="20dp"
     android:elevation="7dp"
     android:translationZ="7dp"
+    android:id="@+id/item_kebun"
     app:cardCornerRadius="10dp">
     <RelativeLayout
         android:layout_width="150dp"
@@ -19,80 +20,18 @@
             android:scaleType="fitXY"
             android:src="@drawable/ic_launcher_background" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_rating_background"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_alignStart="@+id/img_perkebunan"
-            android:layout_alignBottom="@+id/img_perkebunan"
-            android:layout_marginStart="14dp"
-            android:layout_marginBottom="-17dp"
-            android:elevation="10dp"
-            android:translationZ="5dp"
-            app:cardCornerRadius="20dp">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_rating_yellow"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_alignStart="@+id/img_background_detail"
-                android:layout_alignBottom="@+id/img_background_detail"
-                android:backgroundTint="@color/green"
-                android:elevation="10dp"
-                android:translationZ="5dp"
-                android:visibility="invisible"
-                app:cardCornerRadius="20dp">
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_rating_red"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_alignStart="@+id/img_background_detail"
-                android:layout_alignBottom="@+id/img_background_detail"
-                android:backgroundTint="@color/brown"
-                android:elevation="10dp"
-                android:translationZ="5dp"
-                android:visibility="invisible"
-                app:cardCornerRadius="20dp">
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_rating"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_alignStart="@+id/img_background_detail"
-                android:layout_alignBottom="@+id/img_background_detail"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/green"
-                android:elevation="10dp"
-                android:translationZ="5dp"
-                app:cardCornerRadius="20dp">
-
-                <TextView
-                    android:id="@+id/tv_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text=""
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-        </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/tv_movie"
+            android:id="@+id/tv_namaKebun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/cv_rating_background"
+            android:layout_below="@+id/img_perkebunan"
             android:layout_marginHorizontal="5dp"
             android:layout_marginTop="15dp"
-            android:text=""
+            android:text="@string/nama_kebun"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -101,11 +40,38 @@
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_movie"
+            android:layout_below="@+id/tv_namaKebun"
             android:layout_marginHorizontal="5dp"
-            android:text=""
-            android:textSize="14sp"
-            android:layout_marginBottom="10dp"/>
+            android:text="@string/date_time_kebun"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tv_kuantitas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/kuantitas_kebun"
+            android:textSize="8sp" />
+        <TextView
+            android:id="@+id/tv_ton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:layout_toRightOf="@+id/tv_kuantitas"
+            android:layout_marginTop="0dp"
+            android:text="@string/ton"
+            android:textSize="8sp" />
+        <TextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_kuantitas"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/alamat_kebun"
+            android:textSize="8sp" />
 
     </RelativeLayout>
 

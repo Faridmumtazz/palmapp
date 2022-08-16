@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailKebunFragment"
+            app:destination="@id/detailKebunFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -110,6 +113,15 @@
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/register_enter_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/detailKebunFragment"
+        android:name="mumtaz.telsa.palmapp.view.DetailKebunFragment"
+        android:label="fragment_detail_kebun"
+        tools:layout="@layout/fragment_detail_kebun" />
 </navigation>

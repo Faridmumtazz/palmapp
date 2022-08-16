@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_2"
+    tools:context=".view.DetailKebunFragment">
+
+    <ImageView
+        android:id="@+id/img_detail_perkebunan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/palmapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_detail_namaKebun"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/img_detail_perkebunan"
+        android:text="@string/nama_kebun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_detail_date"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/tv_detail_namaKebun"
+        android:text="@string/date_time_kebun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_detail_desc"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/tv_detail_date"
+        android:text="@string/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

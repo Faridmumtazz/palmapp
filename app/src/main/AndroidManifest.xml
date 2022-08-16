@@ -11,11 +11,12 @@
     <application
         android:name=".network.PalmApplication"
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/palmapp"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/palmapp"
         android:supportsRtl="true"
         android:theme="@style/Theme.Palmapp"
         tools:targetApi="31">

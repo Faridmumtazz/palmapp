@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_5"
+    android:background="@drawable/img_2"
     tools:context=".view.HomeFragment"
+    android:fillViewport="true"
+    tools:ignore="ScrollViewCount"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -79,10 +81,10 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_perkebunan"
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_popular"
             android:layout_alignParentBottom="true"
             android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

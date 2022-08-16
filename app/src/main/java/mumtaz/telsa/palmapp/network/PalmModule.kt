@@ -40,6 +40,8 @@ object PalmModule {
         return retrofit.create(ApiService::class.java)
     }
 
+
+
     @Provides
     @Singleton
     fun providesPref(@ApplicationContext appContext: Context) : DataStoreManager =  DataStoreManager(appContext)
