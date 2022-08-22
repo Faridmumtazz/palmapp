@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import mumtaz.telsa.palmapp.R
 import mumtaz.telsa.palmapp.data.datastore.DataStoreManager
 import mumtaz.telsa.palmapp.data.utils.Status
@@ -18,7 +19,7 @@ import mumtaz.telsa.palmapp.viewmodel.UserApiViewModel
 import java.util.*
 
 
-class AddFragment : Fragment() {
+class AddFragment : Fragment() , View.OnClickListener {
 
     private var _binding: FragmentAddBinding? = null
     private val binding get() = _binding!!
@@ -65,6 +66,14 @@ class AddFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnAddKebun.setOnClickListener(this)
+        binding.btnAddJasa.setOnClickListener(this)
+        binding.btnAddCompany.setOnClickListener(this)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.profile -> {
@@ -81,6 +90,20 @@ class AddFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.option_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onClick(p0: View?) {
+        when (p0?.id){
+            R.id.btn_add_kebun ->{
+                p0.findNavController().navigate(R.id.action_addFragment_to_addKebunFragment)
+            }
+            R.id.btn_add_jasa ->{
+                p0.findNavController().navigate(R.id.action_addFragment_to_addJasaFragment)
+            }
+            R.id.btn_add_company ->{
+                p0.findNavController().navigate(R.id.action_addFragment_to_addCompanyFragment)
+            }
+        }
     }
 
 

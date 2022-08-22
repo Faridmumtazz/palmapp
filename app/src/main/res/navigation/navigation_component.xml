@@ -69,6 +69,15 @@
 <!--        <action-->
 <!--            android:id="@+id/action_addFragment_to_homeFragment"-->
 <!--            app:destination="@id/homeFragment" />-->
+        <action
+            android:id="@+id/action_addFragment_to_addKebunFragment"
+            app:destination="@id/addKebunFragment" />
+        <action
+            android:id="@+id/action_addFragment_to_addJasaFragment"
+            app:destination="@id/addJasaFragment" />
+        <action
+            android:id="@+id/action_addFragment_to_addCompanyFragment"
+            app:destination="@id/addCompanyFragment" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
@@ -124,4 +133,19 @@
         android:name="mumtaz.telsa.palmapp.view.DetailKebunFragment"
         android:label="fragment_detail_kebun"
         tools:layout="@layout/fragment_detail_kebun" />
+    <fragment
+        android:id="@+id/addKebunFragment"
+        android:name="mumtaz.telsa.palmapp.view.AddKebunFragment"
+        android:label="fragment_add_kebun"
+        tools:layout="@layout/fragment_add_kebun" />
+    <fragment
+        android:id="@+id/addJasaFragment"
+        android:name="mumtaz.telsa.palmapp.view.AddJasaFragment"
+        android:label="fragment_add_jasa"
+        tools:layout="@layout/fragment_add_jasa" />
+    <fragment
+        android:id="@+id/addCompanyFragment"
+        android:name="mumtaz.telsa.palmapp.view.AddCompanyFragment"
+        android:label="fragment_add_company"
+        tools:layout="@layout/fragment_add_company" />
 </navigation>

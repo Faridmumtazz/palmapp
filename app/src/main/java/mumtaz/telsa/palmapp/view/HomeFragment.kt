@@ -11,6 +11,7 @@ import androidx.core.os.bundleOf
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import mumtaz.telsa.palmapp.R
 import mumtaz.telsa.palmapp.adapter.AdapterKebun
@@ -80,7 +81,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerView(){
-        _binding!!.rvPerkebunan.layoutManager = LinearLayoutManager(requireContext())
+        _binding!!.rvPerkebunan.layoutManager = GridLayoutManager(requireContext(), 2)
         adapterKebun = AdapterKebun{
             val clickedKebun = bundleOf("KEBUNDATA" to it)
             Navigation.findNavController(requireView())
