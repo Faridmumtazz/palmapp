@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
-                android:id="@+id/et_nama_add"
+                android:id="@+id/et_nama_add_jasa"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="15dp"
                 style="@style/EditTextStyle"
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
-                android:id="@+id/et_no_add"
+                android:id="@+id/et_no_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_no_pengguna"
                 android:layout_marginRight="10dp"
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
-                android:id="@+id/et_email_add"
+                android:id="@+id/et_email_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_email_pengguna"
                 android:layout_marginRight="10dp"
@@ -84,6 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_perusahaan_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_perusahaan_pengguna"
                 android:layout_marginRight="10dp"
@@ -98,6 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_biaya_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_biaya"
                 android:layout_marginRight="10dp"
@@ -112,6 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_kuantitas_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_kuantitas_truk"
                 android:layout_marginRight="10dp"
@@ -126,6 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_alamat_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_alamat"
                 android:layout_marginRight="10dp"
@@ -133,13 +137,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:text="@string/tanggal_panen"
+                android:text="@string/tanggal_angkut"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="30dp"
                 style="@style/TextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_tanggal_angkut_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_tanggal_angkut"
                 android:layout_marginRight="10dp"
@@ -154,6 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_tanggal_sampai_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_tanggal_sampai"
                 android:layout_marginRight="10dp"
@@ -168,6 +174,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_jumlah_bbm_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_jumlah_bbm"
                 android:layout_marginRight="10dp"
@@ -182,6 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_catatan_add_jasa"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_catatan"
                 android:layout_marginRight="10dp"
@@ -204,6 +212,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"/>
             <Button
+                android:id="@+id/btn_submit_add_jasa"
                 style="@style/ButtonStyle"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="10dp"
@@ -213,6 +222,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
 
         </LinearLayout>

@@ -33,6 +33,7 @@
     <string name="tanggal_lahir">Tanggal Lahir</string>
     <string name="tanggal_panen">Tanggal Panen</string>
     <string name="tanggal_sampai">Tanggal Sampai</string>
+    <string name="tanggal_angkut">Tanggal Pengangkutan</string>
     <string name="update_user">Update User</string>
     <string name="catatan">Catatan</string>
     <string name="jumlah_bbm">Jumlah BBM</string>
