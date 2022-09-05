@@ -11,37 +11,36 @@ import androidx.core.os.bundleOf
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import mumtaz.telsa.palmapp.R
+import mumtaz.telsa.palmapp.adapter.AdapterJasa
 import mumtaz.telsa.palmapp.adapter.AdapterKebun
 import mumtaz.telsa.palmapp.data.datastore.DataStoreManager
+import mumtaz.telsa.palmapp.data.utils.JasaApiRepository
 import mumtaz.telsa.palmapp.data.utils.KebunApiRepository
 import mumtaz.telsa.palmapp.data.utils.Status
 import mumtaz.telsa.palmapp.databinding.FragmentHomeBinding
-import mumtaz.telsa.palmapp.network.ApiKebunServices
-import mumtaz.telsa.palmapp.viewmodel.KebunApiViewModel
-import mumtaz.telsa.palmapp.viewmodel.UserApiViewModel
-import mumtaz.telsa.palmapp.viewmodel.ViewModelFactoryKebunApi
+import mumtaz.telsa.palmapp.databinding.FragmentHomeJasaBinding
+import mumtaz.telsa.palmapp.network.ApiJasaServices
+import mumtaz.telsa.palmapp.viewmodel.*
 import java.util.*
 
 
-class HomeFragment : Fragment() , View.OnClickListener{
+class HomeJasaFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentHomeJasaBinding? = null
     private val binding get() = _binding!!
     private val viewModelUser: UserApiViewModel by hiltNavGraphViewModels(R.id.navigation_component)
     private lateinit var pref: DataStoreManager
-    private val apiKebunServices = ApiKebunServices.getInstance()
-    private lateinit var kebunViewModel: KebunApiViewModel
-    private lateinit var adapterKebun: AdapterKebun
+    private val apiJasaServices = ApiJasaServices.getInstance()
+    private lateinit var jasaViewModel: JasaApiViewModel
+    private lateinit var adapterJasa: AdapterJasa
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeJasaBinding.inflate(inflater, container, false)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         (activity as AppCompatActivity?)!!.supportActionBar?.show()
@@ -49,7 +48,7 @@ class HomeFragment : Fragment() , View.OnClickListener{
         pref = DataStoreManager(requireContext())
 
         initRecyclerView()
-        getKebunDataViewModel()
+        getJasaDataViewModel()
 
         viewModelUser.getEmail().observe(viewLifecycleOwner) {
             val email = it
@@ -81,33 +80,27 @@ class HomeFragment : Fragment() , View.OnClickListener{
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.btnJasa.setOnClickListener(this)
-    }
-
     private fun initRecyclerView(){
-        _binding!!.rvPerkebunan.layoutManager = GridLayoutManager(requireContext(), 2)
-        adapterKebun = AdapterKebun{
-            val clickedKebun = bundleOf("KEBUNDATA" to it)
+        _binding!!.rvJasa.layoutManager = GridLayoutManager(requireContext(), 2)
+        adapterJasa = AdapterJasa{
+            val clickedJasa = bundleOf("JASADATA" to it)
             Navigation.findNavController(requireView())
-                .navigate(R.id.action_homeFragment_to_detailKebunFragment, clickedKebun)
+                .navigate(R.id.action_homeFragment_to_detailKebunFragment, clickedJasa)
         }
-        _binding!!.rvPerkebunan.adapter = adapterKebun
+        _binding!!.rvJasa.adapter = adapterJasa
     }
 
-    private fun getKebunDataViewModel(){
-        kebunViewModel = ViewModelProvider(
-            this, ViewModelFactoryKebunApi(KebunApiRepository(apiKebunServices))
+    private fun getJasaDataViewModel(){
+        jasaViewModel = ViewModelProvider(
+            this, ViewModelFactoryJasaApi(JasaApiRepository(apiJasaServices))
         ).get(
-            KebunApiViewModel::class.java
+            JasaApiViewModel::class.java
         )
 
-        kebunViewModel.liveDataKebunApi.observe(viewLifecycleOwner){
-            adapterKebun.setDataKebun(it)
+        jasaViewModel.liveDataJasaApi.observe(viewLifecycleOwner){
+            adapterJasa.setDataJasa(it)
         }
-        kebunViewModel.getAllKebunApi()
+        jasaViewModel.getAllJasaApi()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -115,7 +108,7 @@ class HomeFragment : Fragment() , View.OnClickListener{
             R.id.profile -> {
                 viewModelUser.user.observe(viewLifecycleOwner) {
                     Navigation.findNavController(requireView())
-                        .navigate(R.id.action_homeFragment_to_profileFragment)
+                        .navigate(R.id.action_homeJasaFragment_to_profileFragment)
                 }
                 true
             }
@@ -126,14 +119,6 @@ class HomeFragment : Fragment() , View.OnClickListener{
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.option_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onClick(p0: View?) {
-        when(p0?.id){
-            R.id.btn_jasa ->{
-               p0.findNavController().navigate(R.id.action_homeFragment_to_homeJasaFragment)
-            }
-        }
     }
 
 

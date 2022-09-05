@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_homeFragment_to_detailKebunFragment"
             app:destination="@id/detailKebunFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_homeJasaFragment"
+            app:destination="@id/homeJasaFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -148,4 +151,16 @@
         android:name="mumtaz.telsa.palmapp.view.AddCompanyFragment"
         android:label="fragment_add_company"
         tools:layout="@layout/fragment_add_company" />
+    <fragment
+        android:id="@+id/homeJasaFragment"
+        android:name="mumtaz.telsa.palmapp.view.HomeJasaFragment"
+        android:label="fragment_home_jasa"
+        tools:layout="@layout/fragment_home_jasa" >
+        <action
+            android:id="@+id/action_homeJasaFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeJasaFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

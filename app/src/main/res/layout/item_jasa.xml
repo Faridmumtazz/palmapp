@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="25dp"
+    android:layout_marginVertical="20dp"
+    android:elevation="7dp"
+    android:translationZ="7dp"
+    android:id="@+id/item_jasa"
+    app:cardCornerRadius="10dp">
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_jasa"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher_background" />
+
+
+
+        <TextView
+            android:id="@+id/tv_namaJasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_jasa"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/nama_kebun"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_namaJasa"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/date_time_kebun"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tv_kuantitasJasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/kuantitas_kebun"
+            android:textSize="8sp" />
+        <TextView
+            android:id="@+id/tv_bbm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:layout_toRightOf="@+id/tv_kuantitasJasa"
+            android:layout_marginTop="0dp"
+            android:text="@string/ton"
+            android:textSize="8sp" />
+        <TextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_kuantitasJasa"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/alamat_kebun"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
