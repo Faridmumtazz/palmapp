@@ -54,6 +54,7 @@
             android:layout_height="wrap_content">
 
             <Button
+
                 android:id="@+id/btn_perkebunan"
                 android:text="@string/perkebunan"
                 style="@style/EditTextStyle"
@@ -80,9 +81,18 @@
 
         </LinearLayout>
 
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/jasa"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_jasa"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

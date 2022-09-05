@@ -11,6 +11,7 @@ import androidx.core.os.bundleOf
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import mumtaz.telsa.palmapp.R
 import mumtaz.telsa.palmapp.adapter.AdapterJasa
@@ -26,7 +27,7 @@ import mumtaz.telsa.palmapp.viewmodel.*
 import java.util.*
 
 
-class HomeJasaFragment : Fragment() {
+class HomeJasaFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentHomeJasaBinding? = null
     private val binding get() = _binding!!
@@ -80,6 +81,12 @@ class HomeJasaFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnPerkebunan.setOnClickListener(this)
+    }
+
     private fun initRecyclerView(){
         _binding!!.rvJasa.layoutManager = GridLayoutManager(requireContext(), 2)
         adapterJasa = AdapterJasa{
@@ -119,6 +126,14 @@ class HomeJasaFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.option_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onClick(p0: View?) {
+        when(p0?.id){
+            R.id.btn_perkebunan ->{
+                p0.findNavController().navigate(R.id.action_homeJasaFragment_to_homeFragment)
+            }
+        }
     }
 
 
