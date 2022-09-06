@@ -92,7 +92,7 @@ class HomeJasaFragment : Fragment(), View.OnClickListener {
         adapterJasa = AdapterJasa{
             val clickedJasa = bundleOf("JASADATA" to it)
             Navigation.findNavController(requireView())
-                .navigate(R.id.action_homeFragment_to_detailKebunFragment, clickedJasa)
+                .navigate(R.id.action_homeJasaFragment_to_detailJasaFragment, clickedJasa)
         }
         _binding!!.rvJasa.adapter = adapterJasa
     }

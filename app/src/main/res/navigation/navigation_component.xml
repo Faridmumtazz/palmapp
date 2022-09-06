@@ -162,5 +162,13 @@
         <action
             android:id="@+id/action_homeJasaFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeJasaFragment_to_detailJasaFragment"
+            app:destination="@id/detailJasaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailJasaFragment"
+        android:name="mumtaz.telsa.palmapp.view.DetailJasaFragment"
+        android:label="fragment_detail_jasa"
+        tools:layout="@layout/fragment_detail_jasa" />
 </navigation>

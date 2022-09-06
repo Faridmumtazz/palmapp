@@ -1,14 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_2"
     tools:context=".view.DetailJasaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/jasa"
+                android:id="@+id/tv_detail_namaJasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/img_detail_jasa"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tv_detail_namaJasa"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/name"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/img_detail_jasa"
+                android:id="@+id/tv_detail_nama_orang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_nama_orang_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_detail_jasa"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/tv_detail_tanggal_angkut"
+                android:text="@string/tanggal_angkut" />
+
+            <TextView
+                android:id="@+id/tv_detail_tanggal_angkut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_nama_orang"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/tanggal_angkut_"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_detail_tanggal_angkut_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_nama_orang_isi"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_detail_tanggal_angkut"
+                android:text="@string/tanggal_angkut" />
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/tanggal_sampai"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tv_detail_tanggal_angkut"
+                android:id="@+id/tv_detail_tanggal_sampai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_tanggal_sampai_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_tanggal_angkut_isi"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_detail_tanggal_angkut"
+                android:text="@string/tanggal_angkut" />
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/kuantitas_truk"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tv_detail_tanggal_sampai"
+                android:id="@+id/tv_detail_kuantitas_truk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_kuantitas_truk_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_tanggal_sampai"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_detail_tanggal_angkut"
+                android:text="@string/tanggal_angkut" />
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/jumlah_bbm"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tv_detail_kuantitas_truk"
+                android:id="@+id/tv_detail_jumlah_bbm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_jumlah_bbm_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_kuantitas_truk_isi"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_detail_tanggal_angkut"
+                android:text="@string/tanggal_angkut" />
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/biaya"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tv_detail_jumlah_bbm_isi"
+                android:id="@+id/tv_detail_biaya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_biaya_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_jumlah_bbm_isi"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_detail_tanggal_angkut"
+                android:text="@string/tanggal_angkut" />
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/alamat"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tv_detail_biaya"
+                android:id="@+id/tv_detail_alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_alamat_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_biaya_isi"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_detail_tanggal_angkut"
+                android:text="@string/tanggal_angkut" />
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/catatan"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tv_detail_alamat"
+                android:id="@+id/tv_detail_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_desc_isi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_desc"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/desc" />
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
