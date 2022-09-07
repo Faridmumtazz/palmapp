@@ -30,6 +30,13 @@
     <string name="biaya">Biaya</string>
     <string name="stakeholder_type">Jenis Stakeholder</string>
     <string name="perusahaan">Perusahaan</string>
+    <string name="toko_bibit">Toko Bibit</string>
+    <string name="jenis_bibit">Jenis Bibit</string>
+    <string name="populasi_tanaman">Populasi Tanaman</string>
+    <string name="harga_bibit">Harga Bibit</string>
+    <string name="toko_pupuk">Toko Pupuk</string>
+    <string name="jenis_pupuk">Jenis Pupuk</string>
+    <string name="harga_pupuk">Harga Pupuk</string>
     <string name="tanggal_lahir">Tanggal Lahir</string>
     <string name="tanggal_panen">Tanggal Panen</string>
     <string name="tanggal_sampai">Tanggal Sampai</string>
@@ -37,7 +44,11 @@
     <string name="tanggal_angkut_">Tanggal Pengangkutan :</string>
     <string name="update_user">Update User</string>
     <string name="catatan">Catatan</string>
+    <string name="luas_kebun">Luas Kebun</string>
+    <string name="luas_arealkebun">Luas Areal Kebun</string>
     <string name="jumlah_bbm">Jumlah BBM</string>
+    <string name="kapasitas_panen">Kapasitas Panen</string>
+    <string name="kerapatan_panen">Kerapatan Panen</string>
     <string name="submit">Submit</string>
     <string name="upload">Upload gambar</string>
     <string name="nomor_telephone">Nomor Telephone</string>

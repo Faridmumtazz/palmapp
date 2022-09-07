@@ -1,47 +1,370 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_2"
     tools:context=".view.DetailKebunFragment">
 
-    <TextView
-        android:id="@+id/tv_detail_namaKebun"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/nama_kebun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:id="@+id/img_detail_perkebunan"
-        android:layout_below="@+id/tv_detail_namaKebun"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/palmapp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_detail_date"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/img_detail_perkebunan"
-        android:text="@string/date_time_kebun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/tv_detail_desc"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        android:layout_margin="10dp"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/tv_detail_date"
-        android:text="@string/desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/tv_detail_namaKebun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="@string/nama_kebun"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/img_detail_perkebunan"
+                android:layout_below="@+id/tv_detail_namaKebun"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/palmapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_namaOrang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_detail_perkebunan"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/name"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_detail_namaOrangIsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_detail_perkebunan"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:text="@string/ketik_tanggal_panen"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_tanggalPanen"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_namaOrang"
+                android:text="@string/tanggal_panen"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_tanggalPanenIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_namaOrang"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_kuantitas"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_tanggalPanen"
+                android:text="@string/kuantitas"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_kuantitasIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_tanggalPanen"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_kapasitasPanen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_kuantitas"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/kapasitas_panen"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_detail_kapasitasPanenIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_kuantitas"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_kerapatanPanen"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_kapasitasPanen"
+                android:text="@string/kerapatan_panen"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_kerapatanPanenIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_kapasitasPanen"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_luasKebun"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_kerapatanPanen"
+                android:text="@string/luas_kebun"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_luasKebunIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_kerapatanPanen"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_detail_luasArealKebun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_luasKebun"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/luas_arealkebun"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_detail_luasArealKebunIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_luasKebun"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_tokoBibit"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_luasArealKebun"
+                android:text="@string/toko_bibit"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_tokoBibitIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_luasArealKebun"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_jenisBibit"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_tokoBibit"
+                android:text="@string/jenis_bibit"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_jenisBibitIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_tokoBibit"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_hargaBibit"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_jenisBibit"
+                android:text="@string/harga_bibit"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_hargaBibitIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_jenisBibit"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_tokoPupuk"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_hargaBibit"
+                android:text="@string/toko_pupuk"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_tokoPupukIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_hargaBibit"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_jenisPupuk"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_tokoPupuk"
+                android:text="@string/jenis_pupuk"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_jenisPupukIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_tokoPupuk"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_hargaPupuk"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_jenisPupuk"
+                android:text="@string/harga_pupuk"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_hargaPupukIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_jenisPupuk"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_populasiTanaman"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_hargaPupuk"
+                android:text="@string/populasi_tanaman"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_populasiTanamanIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_hargaPupuk"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_alamatt"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_populasiTanaman"
+                android:text="@string/alamat"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_alamattIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:layout_below="@+id/tv_detail_populasiTanaman"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_detail_catatan"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_alamatt"
+                android:text="@string/catatan"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_detail_catatanIsi"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="30dp"
+                android:layout_below="@+id/tv_detail_catatan"
+                android:text="@string/ketik_tanggal_panen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

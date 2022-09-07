@@ -2,8 +2,6 @@ package mumtaz.telsa.palmapp.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import mumtaz.telsa.palmapp.data.utils.JasaApiRepository
 import mumtaz.telsa.palmapp.data.utils.KebunApiRepository
 import mumtaz.telsa.palmapp.model.GetAllKebunResponseItem
 import retrofit2.Call
