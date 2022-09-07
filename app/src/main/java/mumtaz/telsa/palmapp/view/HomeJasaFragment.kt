@@ -48,7 +48,7 @@ class HomeJasaFragment : Fragment(), View.OnClickListener {
         (activity as AppCompatActivity?)!!.supportActionBar?.title = ""
         pref = DataStoreManager(requireContext())
 
-        initRecyclerView()
+
         getJasaDataViewModel()
 
         viewModelUser.getEmail().observe(viewLifecycleOwner) {
@@ -87,12 +87,12 @@ class HomeJasaFragment : Fragment(), View.OnClickListener {
         binding.btnPerkebunan.setOnClickListener(this)
     }
 
-    private fun initRecyclerView(){
+    private fun initRecyclerViewDua(){
         _binding!!.rvJasa.layoutManager = GridLayoutManager(requireContext(), 2)
         adapterJasa = AdapterJasa{
             val clickedJasa = bundleOf("JASADATA" to it)
             Navigation.findNavController(requireView())
-                .navigate(R.id.action_homeJasaFragment_to_detailJasaFragment, clickedJasa)
+                .navigate(R.id.action_homeFragment_to_detailJasaFragment, clickedJasa)
         }
         _binding!!.rvJasa.adapter = adapterJasa
     }

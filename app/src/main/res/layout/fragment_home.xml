@@ -10,98 +10,116 @@
     tools:ignore="ScrollViewCount"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:textSize="20dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="20dp"
-            android:text="Match Your Palm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/et_search"
-                android:paddingStart="25dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="15dp"
-                style="@style/EditTextStyle"
-                android:hint="@string/search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <ImageView
-                android:layout_marginLeft="330dp"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="35dp"
-                android:src="@drawable/ic_baseline_search_24" />
-
-        </RelativeLayout>
 
         <LinearLayout
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="20dp"
+                android:text="Match Your Palm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-            <Button
-                android:id="@+id/btn_perkebunan"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:paddingStart="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="15dp"
+                    style="@style/EditTextStyle"
+                    android:hint="@string/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_marginLeft="330dp"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="35dp"
+                    android:src="@drawable/ic_baseline_search_24" />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/perkebunan"
-                style="@style/EditTextStyle"
+                style="@style/TextViewStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="40dp"
-                android:padding="2dp" />
-            <Button
-                android:id="@+id/btn_jasa"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_perkebunan"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="4"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/jasa"
-                style="@style/EditTextStyle"
+                style="@style/TextViewStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:padding="2dp" />
-            <Button
-                android:id="@+id/btn_company"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_perjasa"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="4"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/company"
-                style="@style/EditTextStyle"
+                style="@style/TextViewStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:padding="2dp" />
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_perusahaan"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="4"/>
+
 
         </LinearLayout>
 
-        <TextView
-            android:textStyle="bold"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/perkebunan"
-            style="@style/TextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_perkebunan"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:overScrollMode="never"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:itemCount="4">
+    </ScrollView>
 
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
+
 
 
 

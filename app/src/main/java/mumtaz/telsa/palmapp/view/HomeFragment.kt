@@ -15,19 +15,20 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import mumtaz.telsa.palmapp.R
+import mumtaz.telsa.palmapp.adapter.AdapterJasa
 import mumtaz.telsa.palmapp.adapter.AdapterKebun
 import mumtaz.telsa.palmapp.data.datastore.DataStoreManager
+import mumtaz.telsa.palmapp.data.utils.JasaApiRepository
 import mumtaz.telsa.palmapp.data.utils.KebunApiRepository
 import mumtaz.telsa.palmapp.data.utils.Status
 import mumtaz.telsa.palmapp.databinding.FragmentHomeBinding
+import mumtaz.telsa.palmapp.network.ApiJasaServices
 import mumtaz.telsa.palmapp.network.ApiKebunServices
-import mumtaz.telsa.palmapp.viewmodel.KebunApiViewModel
-import mumtaz.telsa.palmapp.viewmodel.UserApiViewModel
-import mumtaz.telsa.palmapp.viewmodel.ViewModelFactoryKebunApi
+import mumtaz.telsa.palmapp.viewmodel.*
 import java.util.*
 
 
-class HomeFragment : Fragment() , View.OnClickListener{
+class HomeFragment : Fragment(){
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -36,6 +37,9 @@ class HomeFragment : Fragment() , View.OnClickListener{
     private val apiKebunServices = ApiKebunServices.getInstance()
     private lateinit var kebunViewModel: KebunApiViewModel
     private lateinit var adapterKebun: AdapterKebun
+    private val apiJasaServices = ApiJasaServices.getInstance()
+    private lateinit var jasaViewModel: JasaApiViewModel
+    private lateinit var adapterJasa: AdapterJasa
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +54,8 @@ class HomeFragment : Fragment() , View.OnClickListener{
 
         initRecyclerView()
         getKebunDataViewModel()
+        initRecyclerViewDua()
+        getJasaDataViewModel()
 
         viewModelUser.getEmail().observe(viewLifecycleOwner) {
             val email = it
@@ -84,11 +90,11 @@ class HomeFragment : Fragment() , View.OnClickListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnJasa.setOnClickListener(this)
+
     }
 
     private fun initRecyclerView(){
-        _binding!!.rvPerkebunan.layoutManager = GridLayoutManager(requireContext(), 2)
+        _binding!!.rvPerkebunan.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         adapterKebun = AdapterKebun{
             val clickedKebun = bundleOf("KEBUNDATA" to it)
             Navigation.findNavController(requireView())
@@ -110,6 +116,29 @@ class HomeFragment : Fragment() , View.OnClickListener{
         kebunViewModel.getAllKebunApi()
     }
 
+    private fun initRecyclerViewDua(){
+        _binding!!.rvPerjasa.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        adapterJasa = AdapterJasa{
+            val clickedJasa = bundleOf("JASADATA" to it)
+            Navigation.findNavController(requireView())
+                .navigate(R.id.action_homeFragment_to_detailJasaFragment, clickedJasa)
+        }
+        _binding!!.rvPerjasa.adapter = adapterJasa
+    }
+
+    private fun getJasaDataViewModel(){
+        jasaViewModel = ViewModelProvider(
+            this, ViewModelFactoryJasaApi(JasaApiRepository(apiJasaServices))
+        ).get(
+            JasaApiViewModel::class.java
+        )
+
+        jasaViewModel.liveDataJasaApi.observe(viewLifecycleOwner){
+            adapterJasa.setDataJasa(it)
+        }
+        jasaViewModel.getAllJasaApi()
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.profile -> {
@@ -128,13 +157,7 @@ class HomeFragment : Fragment() , View.OnClickListener{
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onClick(p0: View?) {
-        when(p0?.id){
-            R.id.btn_jasa ->{
-               p0.findNavController().navigate(R.id.action_homeFragment_to_homeJasaFragment)
-            }
-        }
-    }
+
 
 
 }
