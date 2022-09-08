@@ -28,6 +28,9 @@
     <string name="email_can_t_be_edited">Email cant be edited</string>
     <string name="password">Password</string>
     <string name="biaya">Biaya</string>
+    <string name="berat_buah">Berat Buah</string>
+    <string name="nama_bibit">Nama Bibit</string>
+    <string name="nama_pupuk">Nama Pupuk</string>
     <string name="stakeholder_type">Jenis Stakeholder</string>
     <string name="perusahaan">Perusahaan</string>
     <string name="toko_bibit">Toko Bibit</string>

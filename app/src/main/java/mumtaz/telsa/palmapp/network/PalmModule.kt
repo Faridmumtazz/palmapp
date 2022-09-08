@@ -11,6 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -38,6 +39,15 @@ object PalmModule {
             .client(client)
             .build()
         return retrofit.create(ApiService::class.java)
+    }
+
+    val instance: ApiKebunServices by lazy {
+        val retrofitt = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
+        retrofitt.create(ApiKebunServices::class.java)
     }
 
 

@@ -1,15 +1,21 @@
 package mumtaz.telsa.palmapp.network
 
 import mumtaz.telsa.palmapp.model.GetAllKebunResponseItem
+import mumtaz.telsa.palmapp.model.PostKebunResponse
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 
 interface ApiKebunServices {
 
     @GET("perkebunan")
     fun getAllKebun(): Call<List<GetAllKebunResponseItem>>
+
+    @POST("perkebunan")
+    fun postKebun(@Body request: PostKebunResponse): Call<GetAllKebunResponseItem>
 
     companion object{
         var apiFilmServices: ApiKebunServices? = null

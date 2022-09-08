@@ -37,7 +37,7 @@ class AdapterKebun (private val onClick : (GetAllKebunResponseItem) -> Unit) : R
                 binding.tvKuantitas.text = kuantitas.toString()
                 Glide.with(binding.imgPerkebunan.context)
                     .load(gambarProduk)
-                    .error(R.drawable.ic_launcher_background)
+                    .error(R.drawable.kebunn)
                     .into(binding.imgPerkebunan)
             }
         }

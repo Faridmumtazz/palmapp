@@ -20,11 +20,6 @@ class DetailKebunFragment : Fragment(R.layout.fragment_detail_kebun) {
 
     private var fragmentDetailBinding : FragmentDetailKebunBinding? = null
 
-    private val viewModelUser: UserApiViewModel by hiltNavGraphViewModels(R.id.navigation_component)
-    private lateinit var pref: DataStoreManager
-    private val apiKebunServices = ApiKebunServices.getInstance()
-    private lateinit var kebunViewModel: KebunApiViewModel
-    private lateinit var adapterKebun: AdapterKebun
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,8 +52,8 @@ class DetailKebunFragment : Fragment(R.layout.fragment_detail_kebun) {
             fragmentDetailBinding!!.tvDetailCatatanIsi.text = kebunDetail.description
             Glide.with(fragmentDetailBinding!!.imgDetailPerkebunan.context)
                 .load(kebunDetail.gambarProduk)
-                .error(R.drawable.ic_launcher_background)
-                .override(780, 450)
+                .error(R.drawable.kebunn)
+                .override(540, 280)
                 .into(fragmentDetailBinding!!.imgDetailPerkebunan)
         }
     }

@@ -47,36 +47,36 @@
                 android:hint="@string/ketik_nama_pengguna"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-            <TextView
-                android:text="@string/nomor_telephone"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="30dp"
-                style="@style/TextViewStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/et_no_add"
-                style="@style/EditTextStyle"
-                android:hint="@string/ketik_no_pengguna"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="@string/email"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="30dp"
-                style="@style/TextViewStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/et_email_add"
-                style="@style/EditTextStyle"
-                android:hint="@string/ketik_email_pengguna"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <TextView-->
+<!--                android:text="@string/nomor_telephone"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:layout_marginLeft="30dp"-->
+<!--                style="@style/TextViewStyle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <EditText-->
+<!--                android:id="@+id/et_no_add"-->
+<!--                style="@style/EditTextStyle"-->
+<!--                android:hint="@string/ketik_no_pengguna"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <TextView-->
+<!--                android:text="@string/email"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:layout_marginLeft="30dp"-->
+<!--                style="@style/TextViewStyle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <EditText-->
+<!--                android:id="@+id/et_email_add"-->
+<!--                style="@style/EditTextStyle"-->
+<!--                android:hint="@string/ketik_email_pengguna"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
             <TextView
                 android:text="@string/perusahaan"
                 android:layout_marginTop="15dp"
@@ -85,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_perusahaan_add"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_perusahaan_pengguna"
                 android:layout_marginRight="10dp"
@@ -99,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_biaya_add"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_biaya"
                 android:layout_marginRight="10dp"
@@ -113,6 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_kuantitas_add"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_kuantitas"
                 android:layout_marginRight="10dp"
@@ -127,6 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_alamat_add"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_alamat"
                 android:layout_marginRight="10dp"
@@ -141,8 +145,190 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_tanggal_panen"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_tanggal_panen"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/berat_buah"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_berat_buah"
+                style="@style/EditTextStyle"
+                android:hint="@string/berat_buah"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/nama_bibit"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_nama_bibit"
+                style="@style/EditTextStyle"
+                android:hint="@string/nama_bibit"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/jenis_bibit"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_jenis_bibit"
+                style="@style/EditTextStyle"
+                android:hint="@string/jenis_bibit"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/harga_bibit"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_harga_bibit"
+                style="@style/EditTextStyle"
+                android:hint="@string/harga_bibit"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@string/nama_pupuk"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_nama_pupuk"
+                style="@style/EditTextStyle"
+                android:hint="@string/nama_pupuk"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/jenis_pupuk"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_jenis_pupuk"
+                style="@style/EditTextStyle"
+                android:hint="@string/jenis_pupuk"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/harga_pupuk"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_harga_pupuk"
+                style="@style/EditTextStyle"
+                android:hint="@string/harga_pupuk"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/kapasitas_panen"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_kapasitas_panen"
+                style="@style/EditTextStyle"
+                android:hint="@string/kapasitas_panen"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/kerapatan_panen"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_kerapatan_panen"
+                style="@style/EditTextStyle"
+                android:hint="@string/kerapatan_panen"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/luas_kebun"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_luas_kebun"
+                style="@style/EditTextStyle"
+                android:hint="@string/luas_kebun"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/luas_arealkebun"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_luas_areal_kebun"
+                style="@style/EditTextStyle"
+                android:hint="@string/luas_arealkebun"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/populasi_tanaman"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/et_populasi_tanaman"
+                style="@style/EditTextStyle"
+                android:hint="@string/populasi_tanaman"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_width="match_parent"
@@ -155,6 +341,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/et_catatan_add"
                 style="@style/EditTextStyle"
                 android:hint="@string/ketik_catatan"
                 android:layout_marginRight="10dp"
@@ -177,6 +364,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"/>
             <Button
+                android:id="@+id/btn_submit_add"
                 style="@style/ButtonStyle"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="10dp"
@@ -184,6 +372,11 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/submit"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
 
