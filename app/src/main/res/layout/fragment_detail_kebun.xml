@@ -30,9 +30,9 @@
                 android:layout_below="@+id/tv_detail_namaKebun"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/palmapp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:src="@drawable/kebunn"
+                android:layout_width="250dp"
+                android:layout_height="200dp"/>
 
             <TextView
                 android:id="@+id/tv_detail_namaOrang"
@@ -68,16 +68,17 @@
                 android:layout_below="@+id/tv_detail_namaOrang"
                 android:text="@string/tanggal_panen"
                 android:textSize="12dp" />
+
             <TextView
                 android:id="@+id/tv_detail_tanggalPanenIsi"
-                android:textSize="12dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="16dp"
-                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
-                android:layout_below="@+id/tv_detail_namaOrang"
-                android:text="@string/ketik_tanggal_panen"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_detail_namaOrang"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/tv_detail_luasArealKebun"
+                android:text="@string/ketik_tanggal_panen"
+                android:textSize="12dp" />
             <TextView
                 android:id="@+id/tv_detail_kuantitas"
                 android:textStyle="bold"

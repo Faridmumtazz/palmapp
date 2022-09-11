@@ -41,6 +41,8 @@ class HomeFragment : Fragment(){
     private lateinit var jasaViewModel: JasaApiViewModel
     private lateinit var adapterJasa: AdapterJasa
 
+    var state = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -158,6 +160,14 @@ class HomeFragment : Fragment(){
     }
 
 
+    override fun onPause() {
+        state = true
+        super.onPause()
+    }
+
+    public override fun onDestroy() {
+        if (state) super.onDestroy() else true
+    }
 
 
 }

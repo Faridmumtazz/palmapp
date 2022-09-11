@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import mumtaz.telsa.palmapp.R
 import mumtaz.telsa.palmapp.databinding.FragmentAddKebunBinding
 import mumtaz.telsa.palmapp.model.GetAllKebunResponseItem
@@ -24,6 +23,8 @@ class AddKebunFragment : Fragment(){
 
     private var _binding: FragmentAddKebunBinding?= null
     private val binding get() = _binding!!
+
+    var state = false
 
 //    private lateinit var nama: String
 //    private lateinit var alamat: String
@@ -58,8 +59,26 @@ class AddKebunFragment : Fragment(){
         binding.apply {
             btnSubmitAdd.setOnClickListener {
                 var nama = etNamaAdd.text.toString()
+                var perusahaan = etPerusahaanAdd.text.toString()
+                var biaya = etBiayaAdd.text.toString()
+                var kuantitas = etKuantitasAdd.text.toString()
                 var alamat = etAlamatAdd.text.toString()
-                kebunAction(alamat, nama)
+                var tanggalPanen = etTanggalPanen.text.toString()
+                var beratBuah = etBeratBuah.text.toString()
+                var namaBibit = etNamaBibit.text.toString()
+                var jenisBibit = etJenisBibit.text.toString()
+                var hargaBibit = etJenisBibit.text.toString()
+                var namaPupuk = etNamaPupuk.text.toString()
+                var jenisPupuk = etJenisPupuk.text.toString()
+                var hargaPupuk = etHargaPupuk.text.toString()
+                var kapasitasPanen = etKapasitasPanen.text.toString()
+                var kerapatanPanen = etKerapatanPanen.text.toString()
+                var luasKebun = etLuasKebun.text.toString()
+                var luasArealKebun = etLuasArealKebun.text.toString()
+                var populasiTanaman = etPopulasiTanaman.text.toString()
+                var hasilPanen = etHasilPanen.text.toString()
+                var catatan = etCatatanAdd.text.toString()
+                kebunAction(alamat,beratBuah,catatan,hargaBibit,hargaPupuk, hasilPanen, jenisBibit,jenisPupuk,kapasitasPanen,kerapatanPanen, kuantitas,luasKebun,luasArealKebun,nama,namaBibit,perusahaan,namaPupuk,populasiTanaman, tanggalPanen)
             }
 
 
@@ -67,28 +86,49 @@ class AddKebunFragment : Fragment(){
         }
     }
 
-    private fun kebunAction(alamat:String, nama:String){
+    private fun kebunAction(
+        alamat: String,
+        beratBuah: String,
+        catatan: String,
+        hargaBibit: String,
+        hargaPupuk: String,
+        hasilPanen: String,
+        jenisBibit: String,
+        jenisPupuk: String,
+        kapasitasPanen: String,
+        kerapatanPanen: String,
+        kuantitas: String,
+        luasKebun: String,
+        luasArealKebun: String,
+        nama: String,
+        namaBibit: String,
+        perusahaan: String,
+        namaPupuk: String,
+        populasiTanaman: String,
+        tanggalPanen: String
+
+    ){
         val request = PostKebunResponse(
-            alamat = alamat,
-            0,
+            alamat,
+            beratBuah,
+            catatan,
             "",
-            "",
-            0,
-            0,
-            0,
-            "",
-            "",
-            0,
-            0,
-            0,
-            0,
-            0,
-            nama = nama,
-            "",
-            "",
-            "",
-            0,
-            "",
+            hargaBibit,
+            hargaPupuk,
+            hasilPanen,
+            jenisBibit,
+            jenisPupuk,
+            kapasitasPanen,
+            kerapatanPanen,
+            kuantitas,
+            luasKebun,
+            luasArealKebun,
+            nama,
+            namaBibit,
+            perusahaan,
+            namaPupuk,
+            populasiTanaman,
+            tanggalPanen,
         )
 
         PalmModule.instance.postKebun(request)
@@ -109,6 +149,15 @@ class AddKebunFragment : Fragment(){
                 }
 
             })
+    }
+
+    override fun onPause() {
+        state = true
+        super.onPause()
+    }
+
+    public override fun onDestroy() {
+        if (state) super.onDestroy() else true
     }
 
 

@@ -8,17 +8,17 @@ data class GetAllKebunResponseItem(
     @SerializedName("alamat")
     val alamat: String,
     @SerializedName("beratBuah")
-    val beratBuah: Int,
+    val beratBuah: String,
     @SerializedName("description")
     val description: String,
     @SerializedName("gambarProduk")
     val gambarProduk: String,
     @SerializedName("hargaBibit")
-    val hargaBibit: Int,
+    val hargaBibit: String,
     @SerializedName("hargaPupuk")
-    val hargaPupuk: Int,
+    val hargaPupuk: String,
     @SerializedName("hasilPanen")
-    val hasilPanen: Int,
+    val hasilPanen: String,
     @SerializedName("id")
     val id: String,
     @SerializedName("jenisBibit")
@@ -26,15 +26,15 @@ data class GetAllKebunResponseItem(
     @SerializedName("jenisPupuk")
     val jenisPupuk: String,
     @SerializedName("kapasitasPanen")
-    val kapasitasPanen: Int,
+    val kapasitasPanen: String,
     @SerializedName("kerapatanPanen")
-    val kerapatanPanen: Int,
+    val kerapatanPanen: String,
     @SerializedName("kuantitas")
-    val kuantitas: Int,
+    val kuantitas: String,
     @SerializedName("luas")
-    val luas: Int,
+    val luas: String,
     @SerializedName("luasPanen")
-    val luasPanen: Int,
+    val luasPanen: String,
     @SerializedName("nama")
     val nama: String,
     @SerializedName("namaBibit")
@@ -44,7 +44,7 @@ data class GetAllKebunResponseItem(
     @SerializedName("namaPupuk")
     val namaPupuk: String,
     @SerializedName("populasiTanaman")
-    val populasiTanaman: Int,
+    val populasiTanaman: String,
     @SerializedName("tanggalPanen")
     val tanggalPanen: String
 ) : Serializable

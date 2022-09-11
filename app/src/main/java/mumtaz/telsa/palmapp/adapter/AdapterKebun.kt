@@ -30,7 +30,7 @@ class AdapterKebun (private val onClick : (GetAllKebunResponseItem) -> Unit) : R
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder){
             with(listKebun!![position]){
-                binding.tvNamaKebun.text = namaKebun
+                binding.tvNamaKebun.text = nama
                 binding.tvAlamat.text = alamat
                 binding.tvDate.text = tanggalPanen
                 binding.tvTon.text = kuantitas.toString()

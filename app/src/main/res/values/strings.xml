@@ -42,6 +42,7 @@
     <string name="harga_pupuk">Harga Pupuk</string>
     <string name="tanggal_lahir">Tanggal Lahir</string>
     <string name="tanggal_panen">Tanggal Panen</string>
+    <string name="hasil_panen">Hasil Panen</string>
     <string name="tanggal_sampai">Tanggal Sampai</string>
     <string name="tanggal_angkut">Tanggal Pengangkutan</string>
     <string name="tanggal_angkut_">Tanggal Pengangkutan :</string>
